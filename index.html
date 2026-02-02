@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نواخاک | صفحه اصلی</title>
+<style>
+@font-face { font-family: 'Nastaliq'; src: url('https://rawcdn.githack.com/alirezaahmadi/NastaliqFont/1.0/Nastaliq.ttf'); }
+body{margin:0;font-family:'Nastaliq', serif;background:#f3e9e2;color:#3b0f14;}
+header{background:#5a0015;color:#d4af37;text-align:center;padding:25px 0;border-bottom:4px solid #d4af37;}
+.logo{font-size:36px;font-weight:bold;color:#d4af37;}
+nav{margin-top:10px;}
+nav a{text-decoration:none;color:#d4af37;font-size:18px;margin:0 15px;}
+nav a:hover{color:#fff;}
+.container{max-width:800px;margin:30px auto;padding:20px;}
+.products{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+.product{background:#fff0f0;border:3px solid #5a0015;border-radius:15px;overflow:hidden;width:200px;text-align:center;}
+.product img{width:100%;}
+.product-info{padding:10px;}
+.product-info h3{margin:0 0 5px 0;}
+.product-info p{margin:5px 0;}
+button{padding:8px 12px;border:none;border-radius:5px;background:#c56b4f;color:white;cursor:pointer;}
+button:hover{background:#5a0015;}
+footer{text-align:center;padding:20px;background:#5a0015;color:#d4af37;margin-top:30px;}
+footer a{color:#d4af37;margin:0 10px;text-decoration:none;}
+footer a:hover{color:#fff;}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">نواخاک</div>
+<nav>
+<a href="index.html">صفحه اصلی</a>
+<a href="about.html">درباره ما</a>
+<a href="contact.html">ارتباط با ما</a>
+<a href="cart.html">سبد خرید</a>
+</nav>
+</header>
+
+<div class="container">
+<h1>دیوارکوب‌های سفالی نواخاک</h1>
+<p>به سایت نواخاک خوش آمدید. محصولات را انتخاب و به سبد خرید اضافه کنید.</p>
+
+<div class="products">
+<div class="product">
+<img src="https://via.placeholder.com/200x200.png?text=دیوارکوب+1" alt="دیوارکوب 1">
+<div class="product-info">
+<h3>دیوارکوب 1</h3>
+<p>250000 تومان</p>
+<button onclick="addToCart('دیوارکوب 1',250000)">خرید</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/200x200.png?text=دیوارکوب+2" alt="دیوارکوب 2">
+<div class="product-info">
+<h3>دیوارکوب 2</h3>
+<p>300000 تومان</p>
+<button onclick="addToCart('دیوارکوب 2',300000)">خرید</button>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+<a href="index.html">صفحه اصلی</a> |
+<a href="about.html">درباره ما</a> |
+<a href="contact.html">ارتباط با ما</a> |
+<a href="cart.html">سبد خرید</a>
+<p>© ۲۰۲۶ نواخاک</p>
+</footer>
+
+<script>
+function addToCart(name, price){
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push({name: name, price: price, quantity:1});
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(name + " به سبد خرید اضافه شد!");
+}
+</script>
+</body>
+</html>
